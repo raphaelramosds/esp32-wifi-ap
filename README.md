@@ -1,0 +1,5 @@
+# ESP32 in Access Point mode
+
+## Acknowlodgement
+
+Most parte of the implementation present here was leveraged from [Makerfabs](https://github.com/Makerfabs/Makerfabs_FAQhttps://github.com/Makerfabs/Makerfabs_FAQ)
