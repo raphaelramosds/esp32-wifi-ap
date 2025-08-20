@@ -37,6 +37,7 @@ user program()
 
 int record_rst_time();
 void nvs_test();
+void nvs_erase();
 void record_wifi(char *ssid, char *password);
 void check_wifi(char *ssid, char *password);
 

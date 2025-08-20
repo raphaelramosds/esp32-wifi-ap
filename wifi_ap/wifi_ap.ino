@@ -3,6 +3,10 @@
 void setup()
 {
     Serial.begin(115200);
+
+    // For testing purposes
+    // nvs_erase();
+
     if (wifi_set_main())
     {
         Serial.println("Connect WIFI SUCCESS");
