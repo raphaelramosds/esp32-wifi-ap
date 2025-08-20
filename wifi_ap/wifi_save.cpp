@@ -313,15 +313,26 @@ void set_wifi_from_url(String get_url) {
 int wifi_set_main() {
   char ssid[SSID_LENGTH];
   char password[SSID_LENGTH];
-  pinMode(WIFI_SET_PIN, INPUT_PULLUP);
+
+  Serial.println("wifi_set_main triggered");
+
+  // Reset access point with a push button
+  // pinMode(WIFI_SET_PIN, INPUT_PULLUP);
+
+  // For testing purposes (initialize with LOW to avoid push button)
+  pinMode(WIFI_SET_PIN, OUTPUT);
+  digitalWrite(WIFI_SET_PIN, LOW);
 
   check_wifi(ssid, password);
 
   // If WIFI_SET_PIN is pulled low within 3 seconds, restore factory settings and restart
+  // FIXME: one should push rst on ESP32 board after uploading the code. 
+  //        otherwise wifi_set_main() is not called. Not sure exactly why
   Serial.println("Check WIFI_SET_PIN");
   int runtime = millis();
   int starttime = runtime;
   while ((runtime - starttime) < 3000) {
+
     if (digitalRead(WIFI_SET_PIN) == LOW) {
 
       Serial.println("Please connect \"Makerfabs_ap\".");
