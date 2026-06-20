@@ -4,7 +4,7 @@ Set ESP32 in access point mode to retrieve WIFI credentials and save them on fla
 
 ## Code editor
 
-- Arduino IDE
+- PlatformIO integrated on Visual Studio Code
 
 ## Acknowlodgement
 
